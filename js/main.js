@@ -4,12 +4,15 @@ var locationinput;
 var larray = [];
 
 $(document).ready(function () {
+
+
   $('.query-submit').click(function () {
     if ($("#keyword").val() != "" & $("#location").val() != "") {
       keyword = $("#keyword").val();
       locationinput = $("#location").val();
       $("#facepp-result, #showresult-container, .splash, #calc-avg-container, #average-container").css("display", "none");
       $("#results-button").html('See Results');
+      $('#page-selection').bootpag({page: 1});
       //$("#loader").css("display", "block");
       locationEncoder(locationinput);
 

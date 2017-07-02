@@ -5,25 +5,22 @@
 
 <head>
   <title> Data Mining </title>
-  
-  <link rel="stylesheet" href="css/reset.css" />
+
+  <!--<link rel="stylesheet" href="css/reset.css" />-->
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="icon" href="https://www.cuny.edu/favicon.ico" />
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<!--<script src="raw.github.com/botmonster/jquery-bootpag/master/lib/jquery.bootpag.min.js"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootpag/1.0.7/jquery.bootpag.min.js"></script>
 
   <script src="js/flickr.js"></script>
   <script src="js/facepp.js"></script>
   <script src="js/googlemap.js"></script>
-  <script src="js/jquery.bootpag.js"></script>
-  <script src="js/main.js"></script>
-
 </head>
 
 <body>
@@ -54,73 +51,83 @@
 
 
   <div class="container">
-          <div class="form-inline">
-            <input id="keyword" class="form-control" type="text" placeholder="Keywords: Ruby, Rails, Django">
-            <input id="location" class="form-control" type="text" placeholder="Location: City, State, Zip">
-            <button id="qs" class="btn btn-primary query-submit">Search</button>
-          </div>
-        </div>
-
-<div class="container splash">
-<div class="col-xs-6 col-md-6 col-md-offset-3 col-xs-offset-3">
-
-<div class="panel panel-default" style="margin-top:40px;">
-  <div class="panel-heading"></div>
-  <div class="panel-body">
-    <h3>How to use </h3> 
-    <li><p>Enter a keyword that you want to search. Multiple keywords are allowed by using "," </p></li> <br>
-    <li><p> Enter the location you want to search by:</p></li> <br>
-    <li><p> Then click on search button. </p> </li> <br>
-    <li><p><b>All fields need to be completed.</b></p></li> <br>
-    <h3>Note:</h3> 
-    <li><p>For the results page: Data returned from faceplusplus which has multiple faces will be averaged and labeled with an asterisk "*"</p></li>
-    <li><p>Images that do not have a face will be returned as "Data Unavailable"</p></li>  
+    <div class="form-inline">
+      <input id="keyword" class="form-control" type="text" placeholder="Keywords: Ruby, Rails, Django">
+      <input id="location" class="form-control" type="text" placeholder="Location: City, State, Zip">
+      <button id="qs" class="btn btn-primary query-submit">Search</button>
     </div>
-          </div>
-      </div>
   </div>
 
-<div class="container text-center ResultError">
+  <div class="container splash">
+    <div class="col-xs-6 col-md-6 col-md-offset-3 col-xs-offset-3">
 
-<p class="noresult-error text-center"> NO RESULTS FOUND </p>
+      <div class="panel panel-default" style="margin-top:40px;">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+          <h3>How to use </h3>
+          <li>
+            <p>Enter a keyword that you want to search. Multiple keywords are allowed by using "," </p>
+          </li> <br>
+          <li>
+            <p> Enter the location you want to search by:</p>
+          </li> <br>
+          <li>
+            <p> Then click on search button. </p>
+          </li> <br>
+          <li>
+            <p><b>All fields need to be completed.</b></p>
+          </li> <br>
+          <h3>Note:</h3>
+          <li>
+            <p>For the results page: Data returned from faceplusplus which has multiple faces will be averaged and labeled with
+              an asterisk "*"</p>
+          </li>
+          <li>
+            <p>Images that do not have a face will be returned as "Data Unavailable"</p>
+          </li>
+        </div>
+      </div>
+    </div>
+  </div>
 
-</div>
+  <div class="container text-center ResultError">
+
+    <p class="noresult-error text-center"> NO RESULTS FOUND </p>
+
+  </div>
 
   <!--flickr gallery goes here-->
   <div id="photo-result" class="gallery cf"></div>
   <!--flickr gallery ends-->
 
-   <!--facepp results-->
-   
+  <!--facepp results-->
+
   <div class="container" id="facepp-result">
     <div class="row text-center" id="testresult">
       <!--content goes here-->
     </div>
   </div>
-<!--facepp results ends-->
+  <!--facepp results ends-->
 
-<!--//class="col-xs-offset-5-->
-<div id="page-selection" class="col-xs-offset-5" ></div>
-<div class="container" id="average-container">
-  <div class="row text-center" id="average-results" ></div>
+  <!--//class="col-xs-offset-5-->
+  <div id="page-selection" class="text-center"></div>
+  <div class="container" id="average-container">
+    <div class="row text-center" id="average-results"></div>
   </div>
-<div class="container" id="calc-avg-container">
-  <button id="getAverage-button" type="button" class="btn btn-warning">Calculate Average</button>
-</div>
-<div id="showresult-container">
-  <button id="results-button" type="button" class="btn btn-danger">Show Results</button>
-</div>
+  <div class="container" id="calc-avg-container">
+    <button id="getAverage-button" type="button" class="btn btn-warning">Calculate Average</button>
+  </div>
+  <div id="showresult-container">
+    <button id="results-button" type="button" class="btn btn-danger">Show Results</button>
+  </div>
 
 
 
-
+  <script src="js/pagination.js"></script>
+  <script src="js/main.js"></script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXxwQQFKd1MnsNS7uM2CaZHPdQO6KSeAE&libraries=places&callback=initAutocomplete"
     async defer></script>
 
 </body>
 
 </html>
-
-
-
-
