@@ -1,0 +1,155 @@
+
+/*Break new css*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  /*background: #e5e5e5;*/
+  background: white;
+}
+
+.gallery {
+  width: 840px;
+  margin: 0 auto;
+  /*padding: 5px;*/
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+}
+
+.gallery > div {
+  position: relative;
+  float: left;
+  padding: 5px;
+}
+
+.gallery > div > img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  border: 8px;
+  border-color: black;
+  transition: .1s transform;
+  transform: translateZ(0); /* hack */
+}
+
+.gallery > div:hover {
+  z-index: 4;
+}
+
+.gallery > div:hover > img {
+  transform: scale(1.7,1.7);
+  transition: .3s transform;
+}
+
+.cf:before, .cf:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.cf:after {
+  clear: both;
+}
+
+h1 {
+  margin: 40px 0;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+
+#map {
+        height: 400px;
+        width: 400px;
+       }
+
+#search-bar{
+    margin-top: 90px;
+}
+
+#photo-result{
+    margin-top: 40px;
+    /*margin-bottom: 40px;*/
+    padding-bottom: 10px;
+    padding-top:5px;
+    display:none;
+}
+#showresult-container{
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 50px;
+    text-align: center;
+    
+}
+
+#facepp-result{
+    margin-top: 40px;
+}
+
+.fpimg{
+    display: none;
+    /*max-width: 400px;*/
+    /*padding: 10px;
+    margin-right: 50px;
+    margin-left: 50px;
+    text-align: center;*/
+}
+.splash{
+   display:block;
+}
+
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
+
+.container{
+    text-align: center;
+}
+
+.filtered-img{
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.eimg{
+max-height: 210px;
+max-width: 210px;
+}
+
+#getAverage-button{
+  /*display: none;*/
+  margin-left: 5px;
+}
+#calc-avg-container{
+  display: none;
+}
+#average-container{
+  border-radius: 12px;
+  background: lightsteelblue;
+  margin-bottom: 10px;
+  
+}
+.avg-pos{
+  padding:10px;
+}
+.avg-location-text{
+  color:white;
+  padding: 5px;
+}
+.noresult-error{
+  font-weight: 600;
+  font-size: 17px;
+  color: black;
+
+}
+.ResultError{
+  display: none;
+  margin-top: 20px;
+  background: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+}
