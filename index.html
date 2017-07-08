@@ -7,7 +7,7 @@
   <title> Data Mining </title>
 
   <!--<link rel="stylesheet" href="css/reset.css" />-->
-  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -35,14 +35,14 @@
 
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <a class="navbar-brand" href="index.html">Data Mining using Flickr</a>
+        <a class="navbar-brand" id="h-title" href="index.html">Data Mining Using Flickr</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li><a id="home" href="index.html">Home</a></li>
-          <li><a id="about" href="about.html">About</a></li>
+          <li><a id="help" style="cursor: pointer;">Help</a></li>
         </ul>
       </div>
     </div>
@@ -50,45 +50,64 @@
   <!-- /navbar -->
 
 
-  <div class="container">
+  <div id="sbar" class="container text-center autoAdjust">
     <div class="form-inline">
-      <input id="keyword" class="form-control" type="text" placeholder="Keywords: Ruby, Rails, Django">
+      <input id="keyword" class="form-control" type="text" placeholder="Keywords: Selfie, People">
       <input id="location" class="form-control" type="text" placeholder="Location: City, State, Zip">
       <button id="qs" class="btn btn-primary query-submit">Search</button>
     </div>
   </div>
 
-  <div class="container splash">
-    <div class="col-xs-6 col-md-6 col-md-offset-3 col-xs-offset-3">
+  <div class="container">
+    <div class="row">
 
-      <div class="panel panel-default" style="margin-top:40px;">
-        <div class="panel-heading"></div>
-        <div class="panel-body">
-          <h3>How to use </h3>
-          <li>
-            <p>Enter a keyword that you want to search. Multiple keywords are allowed by using "," </p>
-          </li> <br>
-          <li>
-            <p> Enter the location you want to search by:</p>
-          </li> <br>
-          <li>
-            <p> Then click on search button. </p>
-          </li> <br>
-          <li>
-            <p><b>All fields need to be completed.</b></p>
-          </li> <br>
-          <h3>Note:</h3>
-          <li>
-            <p>For the results page: Data returned from faceplusplus which has multiple faces will be averaged and labeled with
-              an asterisk "*"</p>
-          </li>
-          <li>
-            <p>Images that do not have a face will be returned as "Data Unavailable"</p>
-          </li>
+
+      <div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <div class="modal-header">
+              <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              <p><span style="font-size:20px;"><span style="font-family:comic sans ms,cursive;">How to use:</span></span>
+              </p>
+              <ol style="margin-left: 35px;">
+                <li><span style="font-size:14px;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Enter a keyword that you want to search. (Multiple keywords are allowed by using a comma)</span></span>
+                </li>
+                <li><span style="font-size:14px;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Enter the location you want to search by &nbsp;(ex: New York)</span></span>
+                </li>
+                <li><span style="font-size:14px;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Then click on search button.</span></span>
+                </li>
+              </ol>
+              <p style="text-align: center;"><span style="font-size:14px;"><strong>All fields have to be completed to search</strong></span></p>
+              <p><span style="font-family:trebuchet ms,helvetica,sans-serif;"><span style="font-size:14px;">To query an image: Hover over the desired image and select it. The image should become faded once selected.</span></span>
+              </p>
+              <p><span style="font-size:20px;"><span style="font-family: monospace; font-style: italic;"><span style="font-family:comic sans ms,cursive;">Results</span>:</span>
+                </span>
+              </p>
+              <ul style="margin-left: 35px;">
+                <li><span style="font-size:14px;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Data returned from faceplusplus which contains multiple faces will be averaged and labeled with an asterisk</span></span>
+                </li>
+                <li><span style="font-size:14px;"><span style="font-family:trebuchet ms,helvetica,sans-serif;">Images that does not have a face will be returned as &quot;Data Unavailable&quot;.</span></span>
+                </li>
+              </ul>
+
+            </div>
+            <div class="modal-footer">
+              <div class="btn-group">
+                <button class="btn btn-success" data-dismiss="modal"><span class="glyphicon glyphicon-ok"></span></button>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+
 
   <div class="container text-center ResultError">
 
@@ -114,7 +133,7 @@
   <div class="container" id="average-container">
     <div class="row text-center" id="average-results"></div>
   </div>
-  <div class="container" id="calc-avg-container">
+  <div class="container text-center" id="calc-avg-container">
     <button id="getAverage-button" type="button" class="btn btn-warning">Calculate Average</button>
   </div>
   <div id="showresult-container">
